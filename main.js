@@ -104,19 +104,19 @@ const getSongsFromArr = (arr, secTitle) => {
   document.querySelector("#results > h2").innerText = secTitle;
   const row = document.querySelector("#results > .row");
 
-  row.innerHTML = `<div class="pl-3">
+  row.innerHTML = `<div class="pl-5">
                         <div class="spinner-border text-primary" role="status">
                             <span class="sr-only">Loading...</span>
                         </div>
                     </div>`;
 
-  let reducer = (acc, current) => acc.concat(...current.data.slice(0, 4));
+  let reducer = (acc, current) => acc.concat(...current.slice(0, 4));
 
   Promise.all(arrOfPromises).then((resp) => {
     row.innerHTML = "";
 
     resp
-      .map((arr) => arr)
+      .map((arr) => arr.data)
       .reduce(reducer, [])
       .forEach((song) => {
         const col = document.createElement("div");
