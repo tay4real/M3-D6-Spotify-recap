@@ -52,7 +52,9 @@ const setPlayerInfos = (song) => {
   let currTime = player.querySelector(".currentTime");
   currTime.innerText = "00:00";
   duration.innerText =
-    Math.floor(song.duration / 60) + ":" + Math.floor(song.duration % 60);
+    ("0" + Math.floor(song.duration / 60)).substr(-2) +
+    ":" +
+    ("0" + Math.floor(song.duration % 60)).substr(-2);
 };
 
 const changeProgressBar = (node, perc) => {
