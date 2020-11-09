@@ -23,7 +23,7 @@ let hipHopArtists = ["eminem", "snoopdogg", "lilwayne", "drake", "kanyewest"];
 const albumCard = (songInfo) => {
   return `
           <div class="col text-center" id=${songInfo.id}>
-            <a href="/album_page.html?id=${songInfo.album.id}"> <img class="img-fluid" src=${songInfo.album.cover_medium} alt="img of ${songInfo.artist.name}"/></a>
+             <img class="img-fluid" src=${songInfo.album.cover_medium} alt="img of ${songInfo.artist.name}"/>
               <p> <a href="/album_page.html?id=${songInfo.album.id}">Album: "${songInfo.album.title}"</a>
               <br>
               <a href="/artist_page.html?artistId=${songInfo.artist.id}">Artist: "${songInfo.artist.name}"</a>
